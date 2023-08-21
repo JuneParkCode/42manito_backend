@@ -31,7 +31,7 @@ jobs:
       - name: Install Secret
         env:
           # github repository 안의 ENV_PROD 환경변수 사용
-          ENV_DEV: ${{ secrets.ENV_PROD }}
+          ENV_PROD: ${{ secrets.ENV_PROD }}
         run: |
           echo "$ENV_PROD"  >> .env
 
@@ -56,6 +56,7 @@ jobs:
           --file-exists-behavior OVERWRITE \
           --s3-location bucket=manito42-codedeploy-main-bucket,bundleType=zip,key=server.zip)
           echo "deploymentId=$id" >> $GITHUB_OUTPUT
+
 
       - name: Wait for deployment to finish
         run: |
