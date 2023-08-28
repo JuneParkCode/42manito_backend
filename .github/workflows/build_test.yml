@@ -3,7 +3,7 @@ name: Production Deploy to AWS
 on:
   pull_request:
     branches:
-      - test_deploy
+      - test_deploy # master, develop 브랜치로 변경되어야함.
 env:
   AWS_REGION: ap-northeast-2
 
