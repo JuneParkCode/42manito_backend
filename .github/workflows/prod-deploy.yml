@@ -26,7 +26,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       # https://blog.banksalad.com/tech/github-action-npm-cache/
-      # npm cache
       - uses: actions/setup-node@v3
         with:
           node-version: 18.16.0

@@ -19,7 +19,7 @@ jobs:
       # 레포지토리로 이동합니다.
       - name: Checkout
         uses: actions/checkout@v3
-      # npm cache
+      # https://blog.banksalad.com/tech/github-action-npm-cache/
       - uses: actions/setup-node@v3
         with:
           node-version: 18.16.0
