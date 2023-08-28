@@ -6,6 +6,7 @@ echo "check directory"
 ls -al
 # re install Dependency
 echo "re install Dependency"
+npm uninstall prisma @prisma/client --no-save >> install.log
 npm i >> install.log
 # generate prisma client
 echo "generate prisma client"
