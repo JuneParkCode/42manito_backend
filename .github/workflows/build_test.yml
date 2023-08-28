@@ -16,6 +16,10 @@ jobs:
     name: Build Application
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
       # 레포지토리로 이동합니다.
       - name: Checkout
         uses: actions/checkout@v3
