@@ -2,7 +2,7 @@
 
 name: Production Deploy to AWS
 on:
-  merge_group:
+  push:
     branches:
       - test_deploy
 
@@ -25,6 +25,11 @@ jobs:
       # 레포지토리로 이동합니다.
       - name: Checkout
         uses: actions/checkout@v3
+      # npm cache
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
 
       # 환경변수를 설치합니다.
       # github repository 안의 ENV_PROD 환경변수 사용

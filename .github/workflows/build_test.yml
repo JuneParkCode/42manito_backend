@@ -19,6 +19,11 @@ jobs:
       # 레포지토리로 이동합니다.
       - name: Checkout
         uses: actions/checkout@v3
+      # npm cache
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
       - name: build
         run: |
           npm install
