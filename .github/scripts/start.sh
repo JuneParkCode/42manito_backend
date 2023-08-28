@@ -9,5 +9,6 @@ echo "generate prisma client"
 npx prisma generate
 echo "Deploying prisma..."
 npx prisma migrate deploy
+pm2
 echo "Starting server..."
 npm run start:prod
