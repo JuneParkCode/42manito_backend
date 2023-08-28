@@ -1,0 +1,25 @@
+# Dependency Install, Build, Start를 여기서 다합니다.
+name: Production Deploy to AWS
+on:
+  pull_request:
+    branches:
+      - test_deploy
+env:
+  AWS_REGION: ap-northeast-2
+
+jobs:
+  deploy:
+    permissions:
+      id-token: write
+      contents: write
+
+    name: Build Application
+    runs-on: ubuntu-22.04
+    steps:
+      # 레포지토리로 이동합니다.
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: build
+        run: |
+          npm install
+          npm run build
