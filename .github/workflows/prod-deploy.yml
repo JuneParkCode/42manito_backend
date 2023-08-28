@@ -2,7 +2,7 @@
 
 name: Production Deploy to AWS
 on:
-  merge_group:
+  push:
     branches:
       - test_deploy
 
